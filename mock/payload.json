@@ -1,0 +1,127 @@
+{
+    "TransactionId": "1111111111",
+    "RoleToken": " ",
+    "TransactionStatus": "S",
+    "TransactionMessage": " ",
+    "EmployeeDetails": {
+        "EMP_NAME": "Avi Aboukamar",
+        "EMP_CODE": 88072,
+        "EMP_TYPE": "Regular",
+        "LOCATION": "ISRAEL",
+        "COMP_CODE": "01",
+        "COMP_NAME": "Amdocs (Is",
+        "ORG_NAMES": "IT Management Information Systems"
+    },
+    "APPROVALS": {
+        "EMPLOYEE": "Y",
+        "MNG_APPROVALS": [{
+            "TITLE": "1st Manager | Prasun Nesu",
+            "STATUS": "Approved"
+        }]
+    },
+    "WEEK": {
+        "WEEK_NO": "2020/47",
+        "START_DATE": "15-11-2020",
+        "END_DATE": "21-11-2020",
+        "VALID_ALLOC": "No",
+        "DAYS": [
+            {
+                "REP_DATE": {
+                    "DATE": "15-11-2020",
+                    "DAY": "SUN",
+                    "NOTES": " ",
+                    "ABSENCE_LINES": [],
+                    "LINES": [{
+                        "IN": "0700",
+                        "OUT": "1845"
+                    }],
+                    "TOTAL_DAY_HOURS": 11.7
+                }
+            },
+            {
+                "REP_DATE": {
+                    "DATE": "16-11-2020",
+                    "DAY": "MON",
+                    "NOTES": " ",
+                    "ABSENCE_LINES": [],
+                    "LINES": [{
+                        "IN": "0600",
+                        "OUT": "1745"
+                    }],
+                    "TOTAL_DAY_HOURS": 11.7
+                }
+            },
+            {
+                "REP_DATE": {
+                    "DATE": "17-11-2020",
+                    "DAY": "TUE",
+                    "NOTES": " ",
+                    "ABSENCE_LINES": [],
+                    "LINES": [{
+                        "IN": "0700",
+                        "OUT": "1700"
+                    }],
+                    "TOTAL_DAY_HOURS": 10
+                }
+            },
+            {
+                "REP_DATE": {
+                    "DATE": "18-11-2020",
+                    "DAY": "WED",
+                    "NOTES": " ",
+                    "ABSENCE_LINES": [],
+                    "LINES": [{
+                        "IN": "0740",
+                        "OUT": "1745"
+                    },
+                    {
+                        "IN": "2040",
+                        "OUT": "2245"
+                    }],
+                    "TOTAL_DAY_HOURS": 11.7
+                }
+            },
+            {
+                "REP_DATE": {
+                    "DATE": "19-11-2020",
+                    "DAY": "THU",
+                    "NOTES": " ",
+                    "ABSENCE_LINES": [],
+                    "LINES": [{
+                        "IN": "0730",
+                        "OUT": "1300"
+                    },
+                    {
+                        "IN": "1710",
+                        "OUT": "1900"
+                    }, {
+                        "IN": "1400",
+                        "OUT": "1600"
+                    }],
+                    "TOTAL_DAY_HOURS": 11
+                }
+            },
+            {
+                "REP_DATE": {
+                    "DATE": "20-11-2020",
+                    "DAY": "FRI",
+                    "NOTES": " ",
+                    "ABSENCE_LINES": [],
+                    "LINES": [],
+                    "TOTAL_DAY_HOURS": 0
+                }
+            },
+            {
+                "REP_DATE": {
+                    "DATE": "21-11-2020",
+                    "DAY": "SAT",
+                    "NOTES": " ",
+                    "ABSENCE_LINES": [],
+                    "LINES": [],
+                    "TOTAL_DAY_HOURS": 0
+                }
+            }
+        ],
+        "TOTAL_WEEK_HOURS": 56.1
+    }
+}

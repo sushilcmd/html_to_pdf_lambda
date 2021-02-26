@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - npm install --production
+  build:
+    commands:
+      - find ./ -mtime +10950 -exec touch {} \;
+      - find . -maxdepth 1 ! -name 'index.js' ! -name 'app' ! -name 'node_modules' ! -name 'package.json' ! -name . -exec rm -vrf {} +
+  post_build:
+    commands:
+      - aws cloudformation package --template-file template.yml --output-template-file template-output.yml --s3-bucket tz-dev-pdf-file-conversion --s3-prefix html_to_pdf
+artifacts:
+  files:
+    - template-output.yml

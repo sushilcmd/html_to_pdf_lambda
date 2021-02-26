@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>report</title>
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      background: #ffffff;
+      margin: auto;
+      box-sizing: border-box;
+    }
+
+    .container .header {
+      height: 7rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .container .header .label {
+      width: 150px;
+      height: 3rem;
+      text-align: center;
+      line-height: 3rem;
+      box-sizing: border-box;
+      background: #6d77df;
+      color: #ffffff;
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+
+    .container .contentContainer {
+      height: auto;
+      width: 100%;
+    }
+
+    .container .contentContainer .employeeInfo {
+      height: auto;
+      width: 100%;
+    }
+
+    .container .contentContainer .employeeInfo .row {
+      width: 100%;
+    }
+
+    .container .contentContainer .employeeInfo .row .name {
+      width: 100%;
+      color: #6d77df;
+      font-size: 2rem;
+      text-transform: capitalize;
+      font-weight: bolder;
+    }
+
+    .container .contentContainer .employeeInfo .row .name .id {
+      margin-left: 1rem;
+      font-weight: lighter;
+    }
+
+    .container .contentContainer .employeeInfo .row .employerInfo {
+      height: auto;
+      width: 100%;
+      padding-bottom: 2.5rem;
+      padding-top: 1rem;
+    }
+
+    .container .contentContainer .employeeInfo .row .employerInfo .col {
+      float: left;
+      height: 2rem;
+      width: auto;
+      padding: 0rem 1rem 0rem 1rem;
+      line-height: 2rem;
+      border-right: 1px solid #d3d3d385;
+      color: #6d77df;
+      text-transform: capitalize;
+    }
+
+    .container .contentContainer .employeeInfo .row .employerInfo .col:nth-child(1) {
+      padding-left: 0rem;
+    }
+
+    .container .contentContainer .employeeInfo .row .box {
+      float: left;
+      height: 10rem;
+      width: 50%;
+    }
+
+    .container .contentContainer .employeeInfo .row .box .infoRow {
+      float: left;
+      height: 2rem;
+      width: 80%;
+      line-height: 2rem;
+    }
+
+    .container .contentContainer .employeeInfo .row .box .infoRow .heading {
+      font-size: 15px;
+      text-transform: lowercase;
+      font-weight: bold;
+    }
+
+    .container .contentContainer .employeeInfo .row .box .infoRow .info {
+      font-size: 12px;
+      margin-left: 1rem;
+      text-transform: capitalize;
+    }
+
+    .container .contentContainer .employeeInfo .row .box .flotRight {
+      float: right;
+    }
+
+    .container .contentContainer .employeeInfo .row .box .validAllocationStyle {
+      margin-top: 1rem;
+      border-top: 1px solid #d3d3d385;
+      box-sizing: border-box;
+      padding-top: 0.5rem;
+    }
+
+    .container .contentContainer .employeeInfo .row .box:nth-child(1) {
+      border-right: 1px solid #d3d3d385;
+      box-sizing: border-box;
+    }
+
+    .container .contentContainer .notes {
+      height: auto;
+      width: 100%;
+      padding-bottom: 4rem;
+      box-sizing: border-box;
+    }
+
+    .container .contentContainer .notes .label {
+      height: auto;
+      width: 100%;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #d3d3d385;
+      box-sizing: border-box;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .container .contentContainer .notes .notesContainer {
+      height: auto;
+      width: 100%;
+    }
+
+    .container .contentContainer .notes .notesContainer .note {
+      height: auto;
+      width: 100%;
+      margin-top: 1.5rem;
+    }
+
+    .container .contentContainer .notes .notesContainer .note .title {
+      padding-bottom: 0.8rem;
+      color: #afaaaa;
+      text-transform: capitalize;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .container .contentContainer .notes .notesContainer .note .paragraph {
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .invoice-box {
+      position: relative;
+      float: left;
+      width: 100%;
+      margin: auto;
+      font-size: 16px;
+      line-height: 24px;
+      font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+      color: #555;
+      box-sizing: border-box;
+      padding-top: 3.5rem;
+      padding-bottom: 5rem;
+    }
+
+    .tableInfo {
+      position: relative;
+      float: left;
+      width: 100%;
+      height: auto;
+      padding-bottom: 1rem;
+      box-sizing: border-box;
+      color: #6d77df;
+      font-weight: 600;
+      text-transform: capitalize;
+      font-size: 18px;
+    }
+
+    .invoice-box table {
+      width: 100%;
+      line-height: inherit;
+      text-align: left;
+    }
+
+    .invoice-box table td {
+      padding: 5px;
+      vertical-align: top;
+      text-align: center;
+    }
+
+    .invoice-box table tr.details td:last-child {
+      border-right: none;
+    }
+
+    .invoice-box table tr.top table td {
+      padding-bottom: 20px;
+      border-right: 1px solid #d3d3d385;
+      box-sizing: border-box;
+    }
+
+    .invoice-box table tr.top table td.title {
+      font-size: 45px;
+      line-height: 45px;
+      color: #333;
+    }
+
+    .invoice-box table tr.information table td {
+      padding-bottom: 40px;
+    }
+
+    .invoice-box table tr.heading td {
+      border-bottom: 1px solid #d3d3d385;
+      border-right: 1px solid #d3d3d385;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    .invoice-box table tr.heading td:last-child {
+      border-right: none;
+    }
+
+    .invoice-box table tr.details td {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-right: 1px solid #d3d3d385;
+      text-align: center;
+      border-bottom: 1px solid #d3d3d385;
+      box-sizing: border-box;
+      font-size: 12px;
+    }
+
+    .result {
+      background: #6d77df1a;
+      font-weight: bolder;
+      color: #6d77df;
+      border-bottom: none;
+    }
+
+    .invoice-box table tr.item td {
+      border-bottom: 1px solid #d3d3d385;
+    }
+
+    .invoice-box table tr.item.last td {
+      border-bottom: none;
+    }
+
+    .invoice-box table tr.total td:nth-child(2) {
+      border-top: 1px solid #d3d3d385;
+      font-weight: bold;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .invoice-box table tr.top table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+
+      .invoice-box table tr.information table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="label">weekly print out</div>
+      <div class="createdDate"></div>
+    </div>
+    <div class="contentContainer">
+      <div class="employeeInfo">
+        <div class="row">
+          <div class="name"><span>{{EmployeeDetails.EMP_NAME}}</span><span class="id"> ID {{EmployeeDetails.EMP_CODE}}</span></div>
+          <div class="employerInfo">
+            <div class="col">{{EmployeeDetails.EMP_TYPE}}</div>
+            <div class="col">{{WEEK.END_DATE}} {{WEEK.WEEK_No}}</div>
+            <div class="col">{{EmployeeDetails.LOCATION}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="box">
+            <div class="infoRow">
+              <span class="heading">company number :</span>
+              <span class="info">{{EmployeeDetails.COMP_CODE}}</span>
+            </div>
+            <div class="infoRow">
+              <span class="heading">company name :</span>
+              <span class="info">{{EmployeeDetails.COMP_NAME}}</span>
+            </div>
+            <div class="infoRow">
+              <span class="heading">organization :</span>
+              <span class="info">{{EmployeeDetails.ORG_NAMES}}</span>
+            </div>
+            <div class="infoRow validAllocationStyle">
+              <span class="heading">valid allocation :</span>
+              <span class="info">{{WEEK.VALID_ALLOC}}</span>
+            </div>
+          </div>
+          <div class="box">
+            <div class="infoRow flotRight">
+              <span class="heading" style="text-transform: capitalize;">Approvals</span>
+            </div>
+            <div class="infoRow flotRight">
+              <span class="heading" style="color: #6d77df;">&#10004;</span>
+              <span class="info">Employee</span>
+            </div>
+            {{#each APPROVALS.MNG_APPROVALS}}
+              <div class="infoRow flotRight">
+                <span class="heading" style="color: #6d77df;">&#10004;</span>
+                <span class="info">{{TITLE}}</span>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      <div class="invoice-box">
+        <div class="tableInfo">weekly report | total hours {{WEEK.TOTAL_WEEK_HOURS}}</div>
+        <table cellpadding="0" cellspacing="0">
+          <tr class="heading">
+            <td>Sun</td>
+            <td>Mon</td>
+            <td>Tue</td>
+            <td>Wed</td>
+            <td>Thu</td>
+            <td>Fri</td>
+            <td>Sat</td>
+          </tr>
+          {{#each finalArray}}
+          <tr class="details">
+            {{#each col}}
+            <td>{{in}} - {{out}}</td>
+            {{/each}}
+          </tr>
+          {{/each}}
+
+          <tr class="details result">
+            <td>{{total_hours.SUN}}</td>
+            <td>{{total_hours.MON}}</td>
+            <td>{{total_hours.TUE}}</td>
+            <td>{{total_hours.WED}}</td>
+            <td>{{total_hours.THU}}</td>
+            <td>{{total_hours.FRI}}</td>
+            <td>{{total_hours.SAT}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="notes">
+        <div class="label">Notes</div>
+        <div class="notesContainer">
+          <div class="note">
+            <div class="title">sunday - oct - 1</div>
+            <div class="paragraph">What a Great explanation with very detail information for me as the newbie Cloud
+              Learner. This Course is my second source after AWS APN Learning Portal. I do really enjoy and easy to.
+            </div>
+          </div>
+          <div class="note">
+            <div class="title">monday - oct - 2</div>
+            <div class="paragraph">What a Great explanation with very detail information for me as the newbie Cloud
+              Learner. This Course is my second source after AWS APN Learning Portal. I do really enjoy.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
