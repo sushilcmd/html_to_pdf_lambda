@@ -22,8 +22,8 @@ const get_html = (reportData) => {
  */
 
 const convert_html_pdf = async (html) => {
+    let browser = null;
     try {
-        let browser = null;
         browser = await chromium.puppeteer.launch({
             args: chromium.args,
             defaultViewport: chromium.defaultViewport,
@@ -45,8 +45,12 @@ const convert_html_pdf = async (html) => {
         const base64String = pdf.toString('base64');
         return base64String;
     } catch (error) {
-        console.log(error)
-        throw error;
+        console.log("error ==> ", error)
+        throw new Error(error);
+    } finally {
+        if (browser !== null) {
+            await browser.close();
+        }
     }
 }
 
@@ -62,15 +66,9 @@ exports.handler = async (event, context) => {
             type: 'pdf',
             base64Str: base64String
         }
-
         context.succeed(RES.SUCCESS(finalData));
 
     } catch (error) {
-        console.log(error);
         return RES.FAILURE(error);
-    } finally {
-        if (browser !== null) {
-            await browser.close();
-        }
     }
 };
